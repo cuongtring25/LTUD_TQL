@@ -1,0 +1,38 @@
+E:\LaptrinhUngdung\quanLyktx\obj\Debug\quanLyktx.csproj.AssemblyReference.cache
+E:\LaptrinhUngdung\quanLyktx\obj\Debug\quanLyktx.FrmDangNhap.resources
+E:\LaptrinhUngdung\quanLyktx\obj\Debug\quanLyktx.FrmDangKyDichVu.resources
+E:\LaptrinhUngdung\quanLyktx\obj\Debug\quanLyktx.FrmDichVu.resources
+E:\LaptrinhUngdung\quanLyktx\obj\Debug\quanLyktx.FrmHoaDon.resources
+E:\LaptrinhUngdung\quanLyktx\obj\Debug\quanLyktx.FrmKhieuNai.resources
+E:\LaptrinhUngdung\quanLyktx\obj\Debug\quanLyktx.FrmPhong.resources
+E:\LaptrinhUngdung\quanLyktx\obj\Debug\quanLyktx.FrmSinhVien.resources
+E:\LaptrinhUngdung\quanLyktx\obj\Debug\quanLyktx.FrmThueTraPhong.resources
+E:\LaptrinhUngdung\quanLyktx\obj\Debug\quanLyktx.FrmTongQuan.resources
+E:\LaptrinhUngdung\quanLyktx\obj\Debug\quanLyktx.Properties.Resources.resources
+E:\LaptrinhUngdung\quanLyktx\obj\Debug\quanLyktx.TongQuan.resources
+E:\LaptrinhUngdung\quanLyktx\obj\Debug\quanLyktx.csproj.GenerateResource.cache
+E:\LaptrinhUngdung\quanLyktx\obj\Debug\quanLyktx.csproj.CoreCompileInputs.cache
+E:\LaptrinhUngdung\quanLyktx\obj\Debug\quanLyktx.exe
+E:\LaptrinhUngdung\quanLyktx\obj\Debug\quanLyktx.pdb
+E:\LaptrinhUngdung\quanLyktx\bin\Debug\quanLyktx.exe.config
+E:\LaptrinhUngdung\quanLyktx\bin\Debug\quanLyktx.exe
+E:\LaptrinhUngdung\quanLyktx\bin\Debug\quanLyktx.pdb
+D:\Download 2.0\BTL - Lập trình ứng dụng\QuanlyKhuKTXCS\bin\Debug\quanLyktx.exe.config
+D:\Download 2.0\BTL - Lập trình ứng dụng\QuanlyKhuKTXCS\bin\Debug\quanLyktx.exe
+D:\Download 2.0\BTL - Lập trình ứng dụng\QuanlyKhuKTXCS\bin\Debug\quanLyktx.pdb
+D:\Download 2.0\BTL - Lập trình ứng dụng\QuanlyKhuKTXCS\obj\Debug\quanLyktx.csproj.AssemblyReference.cache
+D:\Download 2.0\BTL - Lập trình ứng dụng\QuanlyKhuKTXCS\obj\Debug\quanLyktx.FrmDangKyDichVu.resources
+D:\Download 2.0\BTL - Lập trình ứng dụng\QuanlyKhuKTXCS\obj\Debug\quanLyktx.FrmDangnhap.resources
+D:\Download 2.0\BTL - Lập trình ứng dụng\QuanlyKhuKTXCS\obj\Debug\quanLyktx.FrmDichVu.resources
+D:\Download 2.0\BTL - Lập trình ứng dụng\QuanlyKhuKTXCS\obj\Debug\quanLyktx.FrmHoaDon.resources
+D:\Download 2.0\BTL - Lập trình ứng dụng\QuanlyKhuKTXCS\obj\Debug\quanLyktx.FrmKhieuNai.resources
+D:\Download 2.0\BTL - Lập trình ứng dụng\QuanlyKhuKTXCS\obj\Debug\quanLyktx.FrmPhong.resources
+D:\Download 2.0\BTL - Lập trình ứng dụng\QuanlyKhuKTXCS\obj\Debug\quanLyktx.FrmSinhVien.resources
+D:\Download 2.0\BTL - Lập trình ứng dụng\QuanlyKhuKTXCS\obj\Debug\quanLyktx.FrmThueTraPhong.resources
+D:\Download 2.0\BTL - Lập trình ứng dụng\QuanlyKhuKTXCS\obj\Debug\quanLyktx.FrmTongQuan.resources
+D:\Download 2.0\BTL - Lập trình ứng dụng\QuanlyKhuKTXCS\obj\Debug\quanLyktx.Properties.Resources.resources
+D:\Download 2.0\BTL - Lập trình ứng dụng\QuanlyKhuKTXCS\obj\Debug\quanLyktx.csproj.GenerateResource.cache
+D:\Download 2.0\BTL - Lập trình ứng dụng\QuanlyKhuKTXCS\obj\Debug\quanLyktx.csproj.CoreCompileInputs.cache
+D:\Download 2.0\BTL - Lập trình ứng dụng\QuanlyKhuKTXCS\obj\Debug\quanLyktx.exe
+D:\Download 2.0\BTL - Lập trình ứng dụng\QuanlyKhuKTXCS\obj\Debug\quanLyktx.pdb
+D:\Download 2.0\BTL - Lập trình ứng dụng\QuanlyKhuKTXCS\obj\Debug\quanLyktx.FrmQuenMatKhau.resources
