@@ -63,7 +63,7 @@ namespace quanLyktx
             }
             else if (rdoMaSV.Checked)
             {
-                sql = $"SELECT * FROM KhieuNai WHERE ma_sinh_vien = '{txtMaSV.Text}'";
+                sql = $"exec XemKhieuNaiCuaSinhVien {txtMaSV.Text}";
             }
             else
             {
@@ -87,12 +87,9 @@ namespace quanLyktx
         private void btnTaoMoi_Click(object sender, EventArgs e)
         {
             string sql = string.Format(
-                "INSERT INTO KhieuNai (ma_sinh_vien, noi_dung_khieu_nai, trang_thai, ngay_tao) " +
-                "VALUES ('{0}', N'{1}', N'{2}', '{3}')",
+                "exec GuiKhieuNai {0},'{1}'" ,
                 txtMaSinhVien.Text,
-                txtNoiDung.Text,
-                cboTrangThaiXuLy.Text,
-                dtNgayTao.Value.ToString("yyyy-MM-dd")
+                txtNoiDung.Text
             );
 
             kn.Thucthi(sql);
@@ -124,7 +121,7 @@ namespace quanLyktx
             DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xoá khiếu nại này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                string sql = $"DELETE FROM KhieuNai WHERE ma_khieu_nai = '{cboMaKhieuNai.Text}'";
+                string sql = $"exec XoaKhieuNai {cboMaKhieuNai.Text}";
                 kn.Thucthi(sql);
                 MessageBox.Show("Xoá khiếu nại thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadKhieuNai();

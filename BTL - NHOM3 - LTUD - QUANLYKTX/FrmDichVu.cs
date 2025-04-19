@@ -26,7 +26,7 @@ namespace quanLyktx
         }
         private void hienthidichvu()
         {
-            DataTable dataTable = kn.Lay_DulieuBang("SELECT * FROM DichVu");
+            DataTable dataTable = kn.Lay_DulieuBang("exec XemDanhSachDichVu");
             dgvDichVu.DataSource = dataTable;
 
             cboMaDV.DataSource = dataTable;
@@ -99,7 +99,7 @@ namespace quanLyktx
         {
             try
             {
-                string sql = "INSERT INTO DichVu (ten_dich_vu, mo_ta, gia) VALUES (@ten, @mota, @gia)";
+                string sql = "exec ThemDichVu @ten, @mota, @gia";
                 kn.Ketnoi_dulieu();
                 SqlCommand cmd = new SqlCommand(sql, kn.cnn);
                 cmd.Parameters.AddWithValue("@ten", txtTenDV.Text);
@@ -140,7 +140,7 @@ namespace quanLyktx
                 }
                 else
                 {
-                    string sql = "DELETE FROM DichVu WHERE ma_dich_vu = @maDV";
+                    string sql = "exec XoaDichVu @maDV";
                     SqlCommand cmd = new SqlCommand(sql, kn.cnn);
                     cmd.Parameters.AddWithValue("@maDV", txtMaDV.Text);
                     cmd.ExecuteNonQuery();
@@ -160,7 +160,7 @@ namespace quanLyktx
         {
             try
             {
-                string sql = "UPDATE DichVu SET ten_dich_vu = @ten, mo_ta = @mota, gia = @gia WHERE ma_dich_vu = @maDV";
+                string sql = "exec CapNhatDichVu @maDV,@ten,@mota,@gia";
                 kn.Ketnoi_dulieu();
                 SqlCommand cmd = new SqlCommand(sql, kn.cnn);
                 cmd.Parameters.AddWithValue("@ten", txtTenDV.Text);

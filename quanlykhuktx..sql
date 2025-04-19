@@ -1,8 +1,5 @@
-﻿create database QUANLYKTX
+﻿create database QLKTXSV
 use QUANLYKTX
-
---drop database QUANLYKTX
-
 -- Bảng phòng 
 CREATE TABLE Phong (
     ma_phong INT PRIMARY KEY IDENTITY(1,1),
@@ -67,54 +64,6 @@ CREATE TABLE KhieuNai (
     ngay_tao DATETIME DEFAULT GETDATE()
 );
 
---Bảng thuê trả phòng 
-CREATE TABLE THUETRAPHONG (
-    ma_phong INT,
-    so_phong NVARCHAR(10),
-    khoang_thoi_gian NVARCHAR(50),
-    tinh_tu_ngay DATE,
-    ma_sinh_vien INT,
-    gioi_tinh NVARCHAR(5),
-    CONSTRAINT PK_ThueTraPhong PRIMARY KEY (ma_phong),
-    CONSTRAINT FK_ThueTraPhong_Phong FOREIGN KEY (ma_phong) REFERENCES Phong(ma_phong),
-    CONSTRAINT FK_ThueTraPhong_SinhVien FOREIGN KEY (ma_sinh_vien) REFERENCES SinhVien(ma_sinh_vien)
-);
-ALTER TABLE THUETRAPHONG DROP CONSTRAINT PK_ThueTraPhong;
-ALTER TABLE THUETRAPHONG
-ALTER COLUMN ma_phong INT NOT NULL;
-
-ALTER TABLE THUETRAPHONG
-ALTER COLUMN ma_sinh_vien INT NOT NULL;
-
-ALTER TABLE THUETRAPHONG
-ADD CONSTRAINT PK_ThueTraPhong PRIMARY KEY (ma_phong, ma_sinh_vien);
-
-INSERT INTO THUETRAPHONG (ma_phong, so_phong, khoang_thoi_gian, tinh_tu_ngay, ma_sinh_vien, gioi_tinh)
-SELECT
-    p.ma_phong,
-    p.so_phong,
-    N'T1/2024',               -- Khoảng thời gian thuê mặc định
-    GETDATE(),                -- Ngày hiện tại
-    sv.ma_sinh_vien,
-    sv.gioi_tinh
-FROM
-    SinhVien sv
-JOIN
-    Phong p ON sv.ma_phong = p.ma_phong
-WHERE
-    p.so_nguoi_hien_tai < p.suc_chua
-    AND sv.ma_phong IS NOT NULL
-    AND (
-        NOT EXISTS (
-            SELECT 1
-            FROM THUETRAPHONG ttp
-            WHERE ttp.ma_phong = p.ma_phong
-                  AND ttp.gioi_tinh <> sv.gioi_tinh
-        )
-    );
-
-
-
 	INSERT INTO Phong (so_phong, suc_chua, so_nguoi_hien_tai, gia) VALUES
 	('A101', 4, 3, 1500000),
 	('A102', 4, 2, 1500000),
@@ -127,7 +76,15 @@ WHERE
 	('E501', 12, 10, 600000),
 	('E502', 12, 12, 600000);
 
+create table user_dangnhap(
+	id int primary key,
+	username nvarchar(50) ,
+	password nvarchar(50)
+)
+insert into user_dangnhap(id,username,password) values (1,'admin','12345');
+drop table user_dangnhap
 
+select * from user_dangnhap
 ALTER TABLE Phong
 ADD gioi_tinh NVARCHAR(13) NOT NULL DEFAULT N'Chưa xác định';
 
@@ -193,19 +150,15 @@ SELECT sv.*
 FROM SinhVien sv
 JOIN Phong p ON sv.ma_phong = p.ma_phong
 WHERE sv.gioi_tinh <> p.gioi_tinh;
-
 --Khi sinh viên chuyển ra, cập nhật trạng thái
 ALTER TABLE SinhVien ADD trang_thai NVARCHAR(20) NOT NULL DEFAULT N'Đang ở';
-
 UPDATE SinhVien 
 SET trang_thai = N'Đã chuyển đi' 
 WHERE ma_sinh_vien = 5;
-
 --Theo dõi số lượng sinh viên trong từng phòng
 SELECT COUNT(*) AS so_luong_sinh_vien_con_lai
 FROM SinhVien
 WHERE trang_thai = N'Đang ở';
-
 --Theo dõi số lượng sinh viên trong từng phòng
 SELECT ma_phong, COUNT(*) AS so_sinh_vien
 FROM SinhVien
@@ -240,8 +193,6 @@ INSERT INTO HoaDon (ma_sinh_vien, tong_so_tien, trang_thai_thanh_toan, ngay_tao)
 (10, 150000, N'Đã thanh toán', GETDATE()),
 (11, 300000, N'Chưa thanh toán', GETDATE());
 
-
-
 INSERT INTO ChiTietHoaDon (ma_hoa_don, ma_dich_vu, so_tien, so_luong) VALUES
 (3, 1, 200000, 1),
 (4, 2, 100000, 1),
@@ -257,9 +208,9 @@ INSERT INTO KhieuNai (ma_sinh_vien, noi_dung_khieu_nai, trang_thai, ngay_tao) VA
 (7, N'Nhân viên bảo vệ không kiểm soát xe ra vào.', N'Chưa giải quyết', GETDATE()),
 (8, N'Nước uống có mùi lạ.', N'Đang xử lý', GETDATE());
 
+ALTER TABLE ChiTietHoaDon ADD so_tien INT;
 
-select * from THUETRAPHONG
-select * from Phong
+select * from phong
 select * from SinhVien
 select * from HoaDon
 select * from ChiTietHoaDon
@@ -301,81 +252,16 @@ BEGIN
     END
 END;
 
--- Thêm một sinh viên vào cơ sở dữ liệu với các thông tin cần thiết
-CREATE PROCEDURE ThemSinhVien
-    @ho_ten NVARCHAR(100),
-    @gioi_tinh NVARCHAR(10),
-    @ngay_sinh DATE,
-    @dien_thoai NVARCHAR(15),
-    @email NVARCHAR(100),
-    @ma_phong INT = NULL
-AS
-BEGIN
-    SET NOCOUNT ON;
-    INSERT INTO SinhVien (ho_ten, gioi_tinh, ngay_sinh, dien_thoai, email, ma_phong)
-    VALUES (@ho_ten, @gioi_tinh, @ngay_sinh, @dien_thoai, @email, @ma_phong);
-END;
+-- Thêm một sinh viên vào cơ sở dữ liệu với các thông tin cần thiết 
 
-IF OBJECT_ID('CapNhatSinhVien', 'P') IS NOT NULL
-    DROP PROCEDURE CapNhatSinhVien;
-GO
 
 -- Cập nhật thông tin sinh viên
-CREATE PROCEDURE CapNhatSinhVien
-    @ma_sinh_vien INT,
-    @ho_ten NVARCHAR(100),
-    @gioi_tinh NVARCHAR(10),
-    @ngay_sinh DATE,
-    @dien_thoai NVARCHAR(15),
-    @email NVARCHAR(100),
-    @ma_phong INT = NULL
-AS
-BEGIN
-    SET NOCOUNT ON;
-    UPDATE SinhVien
-    SET ho_ten = @ho_ten,
-        gioi_tinh = @gioi_tinh,
-        ngay_sinh = @ngay_sinh,
-        dien_thoai = @dien_thoai,
-        email = @email,
-        ma_phong = @ma_phong
-    WHERE ma_sinh_vien = @ma_sinh_vien;
-END;
-GO
 
--- Xóa sinh viên
-IF OBJECT_ID('XoaSinhVien', 'P') IS NOT NULL
-    DROP PROCEDURE XoaSinhVien;
-GO
-
-CREATE PROCEDURE XoaSinhVien
-    @ma_sinh_vien INT
-AS
-BEGIN
-    SET NOCOUNT ON;
-    DELETE FROM SinhVien WHERE ma_sinh_vien = @ma_sinh_vien;
-END;
-GO
 
 -- Xem danh sách sinh viên
-IF OBJECT_ID('XemDanhSachSinhVien', 'P') IS NOT NULL
-    DROP PROCEDURE XemDanhSachSinhVien;
-GO
 
-CREATE PROCEDURE XemDanhSachSinhVien
-AS
-BEGIN
-    SET NOCOUNT ON;
-    SELECT ma_sinh_vien, ho_ten, gioi_tinh, ngay_sinh, dien_thoai, email, ma_phong
-    FROM SinhVien;
-END;
-GO
 
--- Thêm dịch vụ mới
-IF OBJECT_ID('ThemDichVu', 'P') IS NOT NULL
-    DROP PROCEDURE ThemDichVu;
-GO
-
+-- Thêm dịch vụ mới(sử dụng)
 CREATE PROCEDURE ThemDichVu
     @ten_dich_vu NVARCHAR(100),
     @mo_ta NVARCHAR(MAX),
@@ -386,13 +272,7 @@ BEGIN
     INSERT INTO DichVu (ten_dich_vu, mo_ta, gia)
     VALUES (@ten_dich_vu, @mo_ta, @gia);
 END;
-GO
-
--- Cập nhật dịch vụ
-IF OBJECT_ID('CapNhatDichVu', 'P') IS NOT NULL
-    DROP PROCEDURE CapNhatDichVu;
-GO
-
+--Cập nhật dịch vụ(sử dụng)
 CREATE PROCEDURE CapNhatDichVu
     @ma_dich_vu INT,
     @ten_dich_vu NVARCHAR(100),
@@ -407,80 +287,45 @@ BEGIN
         price = @gia
     WHERE service_id = @ma_dich_vu;
 END;
-GO
-
--- Xóa dịch vụ
-IF OBJECT_ID('XoaDichVu', 'P') IS NOT NULL
-    DROP PROCEDURE XoaDichVu;
-GO
-
+--Xóa dịch vụ(sử dụng)
 CREATE PROCEDURE XoaDichVu
     @ma_dich_vu INT
 AS
 BEGIN
     SET NOCOUNT ON;
-    DELETE FROM Services WHERE service_id = @ma_dich_vu;
+    DELETE FROM DichVu WHERE ma_dich_vu = @ma_dich_vu;
 END;
-GO
 
--- Xem danh sách dịch vụ
-IF OBJECT_ID('XemDanhSachDichVu', 'P') IS NOT NULL
-    DROP PROCEDURE XemDanhSachDichVu;
-GO
-
+--Xem danh sách dịch vụ(sử dụng)
 CREATE PROCEDURE XemDanhSachDichVu
 AS
 BEGIN
     SET NOCOUNT ON;
-    SELECT * FROM Services;
+    SELECT * FROM DichVu;
 END;
-GO
-
--- Sinh viên đăng ký dịch vụ
-IF OBJECT_ID('SinhVienDangKyDichVu', 'P') IS NOT NULL
-    DROP PROCEDURE SinhVienDangKyDichVu;
-GO
-
+drop proc XemDanhSachDichVu
+-- Sinh viên đăng ký dịch vụ(sử dụng)
 CREATE PROCEDURE SinhVienDangKyDichVu
     @ma_sinh_vien INT,
     @ma_dich_vu INT
 AS
 BEGIN
     SET NOCOUNT ON;
-    INSERT INTO Service_Registrations (student_id, service_id, register_date, status)
+    INSERT INTO DangKyDichVu (ma_sinh_vien, ma_dich_vu, ngay_dang_ky, trang_thai)
     VALUES (@ma_sinh_vien, @ma_dich_vu, GETDATE(), N'Đang sử dụng');
 END;
-GO
 
--- Hủy đăng ký dịch vụ
-IF OBJECT_ID('HuyDangKyDichVu', 'P') IS NOT NULL
-    DROP PROCEDURE HuyDangKyDichVu;
-GO
-
-CREATE PROCEDURE HuyDangKyDichVu
+-- Hủy đăng ký dịch vụ(sử dụng)
+create PROCEDURE HuyDangKyDichVu
     @ma_dang_ky INT
 AS
 BEGIN
     SET NOCOUNT ON;
-    UPDATE Service_Registrations
-    SET status = N'Hủy'
-    WHERE registration_id = @ma_dang_ky;
+    delete from DangKyDichVu
+    WHERE ma_dang_ky = @ma_dang_ky;
 END;
-GO
-
-
 
 -- Xem danh sách dịch vụ của sinh viên
-CREATE PROCEDURE XemDanhSachDichVuCuaSinhVien
-    @ma_sinh_vien INT
-AS
-BEGIN
-    SET NOCOUNT ON;
-    SELECT sr.ma_dang_ky, s.ten_dich_vu, s.mo_ta, s.gia, sr.ngay_dang_ky, sr.trang_thai
-    FROM DangKyDichVu sr
-    JOIN DichVu s ON sr.ma_dich_vu = s.ma_dich_vu
-    WHERE sr.ma_sinh_vien = @ma_sinh_vien;
-END;
 
 
 -- Cập nhật trạng thái dịch vụ của sinh viên khi có thay đổi
@@ -495,15 +340,15 @@ BEGIN
     END
 END;
 
--- Tạo hóa đơn mới
-CREATE PROCEDURE TaoHoaDon
+-- Tạo hóa đơn mới(sử dụng)
+create PROCEDURE TaoHoaDon
     @ma_sinh_vien INT
 AS
 BEGIN
     SET NOCOUNT ON;
 
     -- Kiểm tra sinh viên có dịch vụ nào chưa thanh toán không
-    IF NOT EXISTS (SELECT 1 FROM Service_Registrations WHERE student_id = @ma_sinh_vien AND status = N'Đang sử dụng')
+    IF NOT EXISTS (SELECT 1 FROM DangKyDichVu WHERE ma_sinh_vien = @ma_sinh_vien AND trang_thai = N'Đang sử dụng')
     BEGIN
         PRINT N'Sinh viên không có dịch vụ nào để tạo hóa đơn.';
         RETURN;
@@ -511,87 +356,54 @@ BEGIN
 
     -- Tính tổng tiền hóa đơn
     DECLARE @tong_tien DECIMAL(10,2);
-    SET @tong_tien = (SELECT SUM(s.price)
-                      FROM Service_Registrations sr
-                      JOIN Services s ON sr.service_id = s.service_id
-                      WHERE sr.student_id = @ma_sinh_vien AND sr.status = N'Đang sử dụng');
+    SET @tong_tien = (SELECT SUM(s.gia)
+                      FROM DangKyDichVu sr
+                      JOIN DichVu s ON sr.ma_dich_vu = s.ma_dich_vu
+                      WHERE sr.ma_sinh_vien = @ma_sinh_vien AND sr.trang_thai = N'Đang sử dụng');
 
     -- Tạo hóa đơn mới
     DECLARE @hoa_don_id INT;
-    INSERT INTO Invoices (student_id, total_amount, payment_status, created_at)
+    INSERT INTO HoaDon(ma_sinh_vien, tong_so_tien, trang_thai_thanh_toan, ngay_tao)
     VALUES (@ma_sinh_vien, @tong_tien, N'Chưa thanh toán', GETDATE());
 
     SET @hoa_don_id = SCOPE_IDENTITY();
-
+	declare @so_luong int;
+	set @so_luong = (SELECT count(ma_dang_ky)
+                      FROM DangKyDichVu sr
+                      JOIN DichVu s ON sr.ma_dich_vu = s.ma_dich_vu
+                      WHERE sr.ma_sinh_vien = @ma_sinh_vien AND sr.trang_thai = N'Đang sử dụng');
     -- Thêm chi tiết hóa đơn
-    INSERT INTO Invoice_Details (invoice_id, service_id, amount)
-    SELECT @hoa_don_id, s.service_id, s.price
-    FROM Service_Registrations sr
-    JOIN Services s ON sr.service_id = s.service_id
-    WHERE sr.student_id = @ma_sinh_vien AND sr.status = N'Đang sử dụng';
+    INSERT INTO ChiTietHoaDon(ma_hoa_don, ma_dich_vu, so_luong,so_tien)
+    SELECT @hoa_don_id, s.ma_dich_vu, @so_luong,@tong_tien
+    FROM DangKyDichVu sr
+    JOIN DichVu s ON sr.ma_dich_vu = s.ma_dich_vu
+    WHERE sr.ma_sinh_vien = @ma_sinh_vien AND sr.trang_thai = N'Đang sử dụng';
 
     PRINT N'Hóa đơn đã được tạo thành công.';
 END;
-
--- Xem danh sách hóa đơn của sinh viên
-IF OBJECT_ID('XemDanhSachHoaDon', 'P') IS NOT NULL
-    DROP PROCEDURE XemDanhSachHoaDon;
-GO
-
-CREATE PROCEDURE XemDanhSachHoaDon
+exec TaoHoaDon 4
+select * from ChiTietHoaDon
+-- Xem danh sách hóa đơn(sử dụng)
+create PROCEDURE XemDanhSachHoaDon
     @ma_sinh_vien INT
 AS
 BEGIN
     SET NOCOUNT ON;
-    SELECT invoice_id AS ma_hoa_don, 
-           total_amount AS tong_tien, 
-           payment_status AS trang_thai_thanh_toan, 
-           created_at AS ngay_tao
-    FROM Invoices
-    WHERE student_id = @ma_sinh_vien;
+    SELECT *
+    FROM HoaDon
+    WHERE ma_sinh_vien = @ma_sinh_vien;
 END;
-GO
+
 
 -- Xem chi tiết một hóa đơn
-IF OBJECT_ID('XemChiTietHoaDon', 'P') IS NOT NULL
-    DROP PROCEDURE XemChiTietHoaDon;
-GO
 
-CREATE PROCEDURE XemChiTietHoaDon
-    @ma_hoa_don INT
-AS
-BEGIN
-    SET NOCOUNT ON;
-    SELECT id.detail_id AS ma_chi_tiet, 
-           s.service_name AS ten_dich_vu, 
-           id.amount AS so_tien
-    FROM Invoice_Details id
-    JOIN Services s ON id.service_id = s.service_id
-    WHERE id.invoice_id = @ma_hoa_don;
-END;
-GO
 
 -- Thanh toán hóa đơn
-IF OBJECT_ID('ThanhToanHoaDon', 'P') IS NOT NULL
-    DROP PROCEDURE ThanhToanHoaDon;
-GO
 
-CREATE PROCEDURE ThanhToanHoaDon
-    @ma_hoa_don INT
-AS
-BEGIN
-    SET NOCOUNT ON;
-    UPDATE Invoices
-    SET payment_status = N'Đã thanh toán'
-    WHERE invoice_id = @ma_hoa_don;
-
-    PRINT N'Hóa đơn đã được thanh toán.';
-END;
-GO
 
 -- Tự động tạo hóa đơn hàng tháng
 CREATE TRIGGER trg_TaoHoaDonTuDong
-ON Service_Registrations
+ON DangKyDichVu
 AFTER INSERT
 AS
 BEGIN
@@ -602,38 +414,31 @@ BEGIN
     EXEC CreateInvoice @ma_sinh_vien;
 END;
 
--- Xóa hóa đơn
-CREATE PROCEDURE XoaHoaDon
+-- Xóa hóa đơn(sử dụng)
+create PROCEDURE XoaHoaDon
     @invoice_id INT
 AS
 BEGIN
     SET NOCOUNT ON;
 
     -- Kiểm tra nếu hóa đơn đã thanh toán thì không thể xóa
-    IF EXISTS (SELECT 1 FROM Invoices WHERE invoice_id = @invoice_id AND payment_status = N'Đã thanh toán')
+    IF EXISTS (SELECT 1 FROM HoaDon WHERE ma_hoa_don = @invoice_id AND trang_thai_thanh_toan = N'Đã thanh toán')
     BEGIN
         PRINT N'Không thể xóa hóa đơn đã thanh toán.';
         RETURN;
     END;
 
     -- Xóa hóa đơn và chi tiết hóa đơn
-    DELETE FROM Invoice_Details WHERE invoice_id = @invoice_id;
-    DELETE FROM Invoices WHERE invoice_id = @invoice_id;
+    DELETE FROM ChiTietHoaDon WHERE ma_hoa_don = @invoice_id;
+    DELETE FROM HoaDon WHERE ma_hoa_don = @invoice_id;
 
     PRINT N'Hóa đơn đã được xóa.';
 END;
 
 
 -- Thống kê tổng doanh thu
-CREATE PROCEDURE ThongKeTongDoanhThu
-AS
-BEGIN
-    SET NOCOUNT ON;
-    SELECT SUM(total_amount) AS Tong_Doanh_Thu
-    FROM Invoices
-    WHERE payment_status = N'Đã thanh toán';
-END;
--- Gửi khiếu nại mới
+
+-- Gửi khiếu nại mới (sử dụng)
 CREATE PROCEDURE GuiKhieuNai
     @ma_sinh_vien INT,
     @noi_dung_khieu_nai NVARCHAR(MAX)
@@ -641,85 +446,46 @@ AS
 BEGIN
     SET NOCOUNT ON;
 
-    INSERT INTO KhiuNai (ma_sinh_vien, noi_dung_khieu_nai, trang_thai, ngay_tao)
+    INSERT INTO KhieuNai(ma_sinh_vien, noi_dung_khieu_nai, trang_thai, ngay_tao)
     VALUES (@ma_sinh_vien, @noi_dung_khieu_nai, N'Chưa giải quyết', GETDATE());
 
     PRINT N'Khiếu nại đã được gửi thành công.';
 END;
+exec GuiKhieuNai
 
 -- Xem danh sách khiếu nại
-CREATE PROCEDURE XemDanhSachKhieuNai
-AS
-BEGIN
-    SET NOCOUNT ON;
-    SELECT c.ma_khieu_nai, s.ho_ten, c.noi_dung_khieu_nai, c.trang_thai, c.ngay_tao
-    FROM KhiuNai c
-    JOIN SinhVien s ON c.ma_sinh_vien = s.ma_sinh_vien
-    ORDER BY c.ngay_tao DESC;
-END;
 
--- Xem khiếu nại của một sinh viên
-CREATE PROCEDURE XemKhieuNaiCuaSinhVien
+
+-- Xem khiếu nại của một sinh viên ( sử dụng)
+create PROCEDURE XemKhieuNaiCuaSinhVien
     @ma_sinh_vien INT
 AS
 BEGIN
     SET NOCOUNT ON;
-    SELECT ma_khieu_nai, noi_dung_khieu_nai, trang_thai, ngay_tao
-    FROM KhiuNai
+    SELECT *
+    FROM KhieuNai
     WHERE ma_sinh_vien = @ma_sinh_vien
     ORDER BY ngay_tao DESC;
 END;
+exec XemKhieuNaiCuaSinhVien 4
 
 -- Cập nhật trạng thái khiếu nại
-CREATE PROCEDURE CapNhatTrangThaiKhieuNai
-    @ma_khieu_nai INT,
-    @trang_thai_moi NVARCHAR(20)
-AS
-BEGIN
-    SET NOCOUNT ON;
 
-    -- Kiểm tra nếu trạng thái hợp lệ
-    IF @trang_thai_moi NOT IN (N'Chưa giải quyết', N'Đang xử lý', N'Đã giải quyết')
-    BEGIN
-        PRINT N'Trạng thái không hợp lệ.';
-        RETURN;
-    END;
 
-    UPDATE KhiuNai
-    SET trang_thai = @trang_thai_moi
-    WHERE ma_khieu_nai = @ma_khieu_nai;
-
-    PRINT N'Trạng thái khiếu nại đã được cập nhật.';
-END;
-
--- Xóa khiếu nại
+-- Xóa khiếu nại (sử dụng)
 CREATE PROCEDURE XoaKhieuNai
     @ma_khieu_nai INT
 AS
 BEGIN
     SET NOCOUNT ON;
 
-    DELETE FROM KhiuNai WHERE ma_khieu_nai = @ma_khieu_nai;
+    DELETE FROM KhieuNai WHERE ma_khieu_nai = @ma_khieu_nai;
 
     PRINT N'Khiếu nại đã được xóa.';
 END;
-
+exec XoaKhieuNai
 -- Thống kê khiếu nại theo trạng thái
-CREATE PROCEDURE ThongKeKhieuNaiTheoTrangThai
-AS
-BEGIN
-    SET NOCOUNT ON;
-    SELECT status AS trang_thai, COUNT(*) AS tong_so_khieu_nai
-    FROM KhiuNai
-    GROUP BY status;
-END;
 
-EXEC CreateComplaint 1, N'Phòng bị rò rỉ nước.';
-EXEC GetAllComplaints;
-EXEC UpdateComplaintStatus 1, N'Đang xử lý';
-EXEC DeleteComplaint 1;
-
-EXEC GetAllStudents;
 
 
 

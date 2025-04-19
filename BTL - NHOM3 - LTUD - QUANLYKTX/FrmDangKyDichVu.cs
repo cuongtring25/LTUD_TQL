@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -33,8 +33,8 @@ namespace quanLyktx
 
             cboMaDK.SelectedIndex = -1;
 
-            cboMaDangKy.DataSource = kn.Lay_DulieuBang("SELECT * FROM SinhVien");
-            cboMaDangKy.DisplayMember = "ma_dang_ky";
+            cboMaSV.DataSource = kn.Lay_DulieuBang("SELECT * FROM SinhVien");
+            cboMaSV.DisplayMember = "ma_sinh_vien";
 
             cboMaDV.DataSource = kn.Lay_DulieuBang("SELECT * FROM DichVu");
             cboMaDV.DisplayMember = "ma_dich_vu";
@@ -45,8 +45,8 @@ namespace quanLyktx
             cboMaDangKy.DataBindings.Clear();
             cboMaDangKy.DataBindings.Add("Text", dgvDangKyDichvu.DataSource, "ma_dang_ky");
 
-            cboMaDangKy.DataBindings.Clear();
-            cboMaDangKy.DataBindings.Add("Text", dgvDangKyDichvu.DataSource, "ma_sinh_vien");
+            cboMaSV.DataBindings.Clear();
+            cboMaSV.DataBindings.Add("Text", dgvDangKyDichvu.DataSource, "ma_sinh_vien");
 
             cboMaDV.DataBindings.Clear();
             cboMaDV.DataBindings.Add("Text", dgvDangKyDichvu.DataSource, "ma_dich_vu");
@@ -76,7 +76,7 @@ namespace quanLyktx
 
             DataTable dt = kn.Lay_DulieuBang(sqlcmd);
 
-            if (dt.Rows.Count > 0)
+            if (dt.Rows.Count > 0 && dt != null)
             {
                 dgvDangKyDichvu.DataSource = dt;
             }
@@ -88,7 +88,7 @@ namespace quanLyktx
 
         private void btnTaoMoi_Click(object sender, EventArgs e)
         {
-            string sqlInsert = $"INSERT INTO DangKyDichVu VALUES({txtMaSinhVien.Text}, {cboMaDV.Text}, '{dtNgayDK.Value}', '{cboTrthaiTtoan.Text}')";
+            string sqlInsert = $"exec SinhVienDangKyDichVu {cboMaSV.Text}, {cboMaDV.Text}";
             kn.Thucthi(sqlInsert);
             MessageBox.Show("Tạo mới thành công!");
             LoadDuLieuDangKyDichVu();
@@ -97,7 +97,7 @@ namespace quanLyktx
 
         private void btnChinh_Click(object sender, EventArgs e)
         {
-            string sqlUpdate = $"UPDATE DangKyDichVu SET ma_sinh_vien = {txtMaSinhVien.Text}, ma_dich_vu = {cboMaDV.Text}, ngay_dang_ky = '{dtNgayDK.Value}', trang_thai = '{cboTrthaiTtoan.Text}' WHERE ma_dang_ky = {cboMaDangKy.Text}";
+            string sqlUpdate = $"UPDATE DangKyDichVu SET ma_sinh_vien = {cboMaSV.Text}, ma_dich_vu = {cboMaDV.Text}, ngay_dang_ky = '{dtNgayDK.Value}', trang_thai = '{cboTrthaiTtoan.Text}' WHERE ma_dang_ky = {cboMaDangKy.Text}";
             kn.Thucthi(sqlUpdate);
             MessageBox.Show("Cập nhật thành công!");
             LoadDuLieuDangKyDichVu();
@@ -106,7 +106,7 @@ namespace quanLyktx
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            string sqlDelete = $"DELETE FROM DangKyDichVu WHERE ma_dang_ky = {cboMaDangKy.Text}";
+            string sqlDelete = $"exec HuyDangKyDichVu {cboMaDangKy.Text}";
             kn.Thucthi(sqlDelete);
             MessageBox.Show("Xóa thành công!");
             LoadDuLieuDangKyDichVu();

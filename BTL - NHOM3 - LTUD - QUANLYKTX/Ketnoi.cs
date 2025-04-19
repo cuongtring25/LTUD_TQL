@@ -17,7 +17,7 @@ namespace quanLyktx
 
         public void Ketnoi_dulieu()
         {
-            string strKetNoi = @"Data Source=QUYNHLY;Initial Catalog=QUANLYKTX;Integrated Security=True";
+            string strKetNoi = @"Data Source=LAPTOP-OR5T0FUU\SQLEXPRESS;Initial Catalog=QUANLYKTX;Integrated Security=True";
             cnn = new SqlConnection(strKetNoi);
             cnn.Open();
         }

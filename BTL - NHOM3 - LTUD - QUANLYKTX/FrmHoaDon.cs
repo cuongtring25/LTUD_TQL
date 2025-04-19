@@ -81,7 +81,7 @@ namespace quanLyktx
             if (rdoMaSinhVien.Checked == true)
             {
                 timkiem = txtMaSinhVien.Text;
-                sqlcmd = string.Format("select * from HoaDon where ma_sinh_vien = {0}", timkiem);
+                sqlcmd = string.Format("exec XemDanhSachHoaDon {0}", timkiem);
                 dt = kn.Lay_DulieuBang(sqlcmd);
                 if (dt != null && dt.Rows.Count > 0)
                 {
@@ -97,7 +97,7 @@ namespace quanLyktx
 
         private void btnTaoMoi_Click(object sender, EventArgs e)
         {
-            string sqlluu = string.Format("insert into HoaDon values({0},{1},'{2}','{3}')", txtMaSV.Text, txtTongSoTien.Text, cboTrangThaiThanhToan.Text, dtNgayTao.Value);
+            string sqlluu = string.Format("exec TaoHoaDon {0}", txtMaSV.Text);
             kn.Thucthi(sqlluu);
             MessageBox.Show("Tạo mới thành công");
             hienthihoadon();
@@ -115,26 +115,14 @@ namespace quanLyktx
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            string sqlktra = $"select * from ChiTietHoaDon where ma_hoa_don = {txtMaHoaDon.Text}";
-            kn.Ketnoi_dulieu();
-            SqlCommand cmd1 = new SqlCommand(sqlktra, kn.cnn);
-            SqlDataReader rdr1 = cmd1.ExecuteReader();
-            if (rdr1.Read())
-            {
-                MessageBox.Show("Mã hóa đơn đang được sử dụng ở nơi khác. Hãy xử lý dữ liệu ở bảng ChiTietHoaDon trước.",
-                                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                kn.Huyketnoi();
-            }
-            else
-            {
-                rdr1.Close();
-                string sqlthucthi = $"DELETE FROM HoaDon WHERE ma_hoa_don = {txtMaHoaDon.Text}";
+   
+                string sqlthucthi = $"exec XoaHoaDon {txtMaHoaDon.Text}";
                 kn.Thucthi(sqlthucthi);
                 MessageBox.Show("Xóa thành công",
                                 "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 hienthihoadon();
                 hienthi_dulieu();
-            }
+            
         }
 
         private void btnTroLai_Click(object sender, EventArgs e)

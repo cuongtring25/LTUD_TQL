@@ -18,7 +18,7 @@ namespace quanLyktx
             Application.SetCompatibleTextRenderingDefault(false);
 
             // Chạy form đăng nhập đầu tiên
-            Application.Run(new FrmDangnhap());
+            Application.Run(new FrmHoaDon());
         }
     }
 }
