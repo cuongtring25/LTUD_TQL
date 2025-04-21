@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace quanLyktx
 {
-    public partial class FrmQuenMatKhau: Form
+    public partial class FrmQuenMatKhau : Form
     {
         Ketnoi kn = new Ketnoi();
         public FrmQuenMatKhau()
@@ -29,17 +29,17 @@ namespace quanLyktx
                 return;
             }
 
-            
+
             string sql = $"SELECT * FROM SinhVien WHERE email = '{email}'";
             DataTable dt = kn.Lay_DulieuBang(sql);
 
             if (dt.Rows.Count > 0)
             {
-                
+
                 string matKhau = dt.Rows[0]["dien_thoai"].ToString();
 
                 MessageBox.Show($"Mật khẩu của bạn là: {matKhau}", "Khôi phục mật khẩu", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close(); 
+                this.Close();
             }
             else
             {

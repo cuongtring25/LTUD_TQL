@@ -3,28 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\TUF\\source\\repos\\LTUD_TQL\\BTL - NHOM3 - LTUD - QUANLYKTX\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D2C1C1C8-B847-4EF1-AF5B-FE44CA91C7A5}|BTL_NHOM3_LTUD.csproj|c:\\users\\tuf\\source\\repos\\ltud_tql\\btl - nhom3 - ltud - quanlyktx\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D2C1C1C8-B847-4EF1-AF5B-FE44CA91C7A5}|BTL_NHOM3_LTUD.csproj|C:\\Users\\TUF\\source\\repos\\LTUD_TQL\\BTL - NHOM3 - LTUD - QUANLYKTX\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D2C1C1C8-B847-4EF1-AF5B-FE44CA91C7A5}|BTL_NHOM3_LTUD.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D2C1C1C8-B847-4EF1-AF5B-FE44CA91C7A5}|BTL_NHOM3_LTUD.csproj|c:\\users\\tuf\\source\\repos\\ltud_tql\\btl - nhom3 - ltud - quanlyktx\\frmhoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2C1C1C8-B847-4EF1-AF5B-FE44CA91C7A5}|BTL_NHOM3_LTUD.csproj|solutionrelative:frmhoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D2C1C1C8-B847-4EF1-AF5B-FE44CA91C7A5}|BTL_NHOM3_LTUD.csproj|c:\\users\\tuf\\source\\repos\\ltud_tql\\btl - nhom3 - ltud - quanlyktx\\frmthuetraphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D2C1C1C8-B847-4EF1-AF5B-FE44CA91C7A5}|BTL_NHOM3_LTUD.csproj|solutionrelative:frmthuetraphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D2C1C1C8-B847-4EF1-AF5B-FE44CA91C7A5}|quanLyktx.csproj|C:\\Users\\TUF\\source\\repos\\LTUD_TQL\\BTL - NHOM3 - LTUD - QUANLYKTX\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2C1C1C8-B847-4EF1-AF5B-FE44CA91C7A5}|quanLyktx.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D2C1C1C8-B847-4EF1-AF5B-FE44CA91C7A5}|BTL_NHOM3_LTUD.csproj|c:\\users\\tuf\\source\\repos\\ltud_tql\\btl - nhom3 - ltud - quanlyktx\\frmsinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2C1C1C8-B847-4EF1-AF5B-FE44CA91C7A5}|BTL_NHOM3_LTUD.csproj|solutionrelative:frmsinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D2C1C1C8-B847-4EF1-AF5B-FE44CA91C7A5}|BTL_NHOM3_LTUD.csproj|c:\\users\\tuf\\source\\repos\\ltud_tql\\btl - nhom3 - ltud - quanlyktx\\frmdichvu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D2C1C1C8-B847-4EF1-AF5B-FE44CA91C7A5}|BTL_NHOM3_LTUD.csproj|solutionrelative:frmdichvu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{D2C1C1C8-B847-4EF1-AF5B-FE44CA91C7A5}|BTL_NHOM3_LTUD.csproj|c:\\users\\tuf\\source\\repos\\ltud_tql\\btl - nhom3 - ltud - quanlyktx\\frmsinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D2C1C1C8-B847-4EF1-AF5B-FE44CA91C7A5}|BTL_NHOM3_LTUD.csproj|solutionrelative:frmsinhvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D2C1C1C8-B847-4EF1-AF5B-FE44CA91C7A5}|BTL_NHOM3_LTUD.csproj|C:\\Users\\TUF\\source\\repos\\LTUD_TQL\\BTL - NHOM3 - LTUD - QUANLYKTX\\frmkhieunai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{D2C1C1C8-B847-4EF1-AF5B-FE44CA91C7A5}|BTL_NHOM3_LTUD.csproj|solutionrelative:frmkhieunai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D2C1C1C8-B847-4EF1-AF5B-FE44CA91C7A5}|BTL_NHOM3_LTUD.csproj|C:\\Users\\TUF\\source\\repos\\LTUD_TQL\\BTL - NHOM3 - LTUD - QUANLYKTX\\ketnoi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2C1C1C8-B847-4EF1-AF5B-FE44CA91C7A5}|BTL_NHOM3_LTUD.csproj|solutionrelative:ketnoi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D2C1C1C8-B847-4EF1-AF5B-FE44CA91C7A5}|quanLyktx.csproj|C:\\Users\\TUF\\source\\repos\\LTUD_TQL\\BTL - NHOM3 - LTUD - QUANLYKTX\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2C1C1C8-B847-4EF1-AF5B-FE44CA91C7A5}|quanLyktx.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 82,
-          "SelectedChildIndex": 15,
+          "SelectedChildIndex": 18,
           "Children": [
             {
               "$type": "Bookmark",
@@ -98,28 +98,53 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FrmThueTraPhong.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\TUF\\source\\repos\\LTUD_TQL\\BTL - NHOM3 - LTUD - QUANLYKTX\\FrmThueTraPhong.cs",
+              "RelativeDocumentMoniker": "FrmThueTraPhong.cs",
+              "ToolTip": "C:\\Users\\TUF\\source\\repos\\LTUD_TQL\\BTL - NHOM3 - LTUD - QUANLYKTX\\FrmThueTraPhong.cs [Design]",
+              "RelativeToolTip": "FrmThueTraPhong.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T03:52:31.566Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FrmSinhVien.cs",
+              "DocumentMoniker": "C:\\Users\\TUF\\source\\repos\\LTUD_TQL\\BTL - NHOM3 - LTUD - QUANLYKTX\\FrmSinhVien.cs",
+              "RelativeDocumentMoniker": "FrmSinhVien.cs",
+              "ToolTip": "C:\\Users\\TUF\\source\\repos\\LTUD_TQL\\BTL - NHOM3 - LTUD - QUANLYKTX\\FrmSinhVien.cs",
+              "RelativeToolTip": "FrmSinhVien.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAiwJ0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T03:52:20.998Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FrmSinhVien.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\TUF\\source\\repos\\LTUD_TQL\\BTL - NHOM3 - LTUD - QUANLYKTX\\FrmSinhVien.cs",
+              "RelativeDocumentMoniker": "FrmSinhVien.cs",
+              "ToolTip": "C:\\Users\\TUF\\source\\repos\\LTUD_TQL\\BTL - NHOM3 - LTUD - QUANLYKTX\\FrmSinhVien.cs [Design]",
+              "RelativeToolTip": "FrmSinhVien.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T03:52:19.946Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\TUF\\source\\repos\\LTUD_TQL\\BTL - NHOM3 - LTUD - QUANLYKTX\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\TUF\\source\\repos\\LTUD_TQL\\BTL - NHOM3 - LTUD - QUANLYKTX\\Program.cs*",
               "RelativeToolTip": "Program.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-19T05:32:16.101Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FrmDichVu.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\TUF\\source\\repos\\LTUD_TQL\\BTL - NHOM3 - LTUD - QUANLYKTX\\FrmDichVu.cs",
-              "RelativeDocumentMoniker": "FrmDichVu.cs",
-              "ToolTip": "C:\\Users\\TUF\\source\\repos\\LTUD_TQL\\BTL - NHOM3 - LTUD - QUANLYKTX\\FrmDichVu.cs [Design]",
-              "RelativeToolTip": "FrmDichVu.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-19T05:28:22.913Z",
-              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -135,33 +160,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FrmHoaDon.cs",
-              "DocumentMoniker": "C:\\Users\\TUF\\source\\repos\\LTUD_TQL\\BTL - NHOM3 - LTUD - QUANLYKTX\\FrmHoaDon.cs",
-              "RelativeDocumentMoniker": "FrmHoaDon.cs",
-              "ToolTip": "C:\\Users\\TUF\\source\\repos\\LTUD_TQL\\BTL - NHOM3 - LTUD - QUANLYKTX\\FrmHoaDon.cs",
-              "RelativeToolTip": "FrmHoaDon.cs",
-              "ViewState": "AgIAAGoAAAAAAAAAAAAvwHYAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-18T09:58:40.064Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Ketnoi.cs",
-              "DocumentMoniker": "C:\\Users\\TUF\\source\\repos\\LTUD_TQL\\BTL - NHOM3 - LTUD - QUANLYKTX\\Ketnoi.cs",
-              "RelativeDocumentMoniker": "Ketnoi.cs",
-              "ToolTip": "C:\\Users\\TUF\\source\\repos\\LTUD_TQL\\BTL - NHOM3 - LTUD - QUANLYKTX\\Ketnoi.cs",
-              "RelativeToolTip": "Ketnoi.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAwCwAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-18T09:40:44.149Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\TUF\\source\\repos\\LTUD_TQL\\BTL - NHOM3 - LTUD - QUANLYKTX\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",

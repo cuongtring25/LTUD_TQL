@@ -59,10 +59,9 @@
             // rdoSoPhong
             // 
             this.rdoSoPhong.AutoSize = true;
-            this.rdoSoPhong.Location = new System.Drawing.Point(94, 328);
-            this.rdoSoPhong.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.rdoSoPhong.Location = new System.Drawing.Point(63, 210);
             this.rdoSoPhong.Name = "rdoSoPhong";
-            this.rdoSoPhong.Size = new System.Drawing.Size(135, 29);
+            this.rdoSoPhong.Size = new System.Drawing.Size(86, 20);
             this.rdoSoPhong.TabIndex = 66;
             this.rdoSoPhong.TabStop = true;
             this.rdoSoPhong.Text = "Số phòng";
@@ -71,10 +70,9 @@
             // rdoMaPhong
             // 
             this.rdoMaPhong.AutoSize = true;
-            this.rdoMaPhong.Location = new System.Drawing.Point(94, 236);
-            this.rdoMaPhong.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.rdoMaPhong.Location = new System.Drawing.Point(63, 151);
             this.rdoMaPhong.Name = "rdoMaPhong";
-            this.rdoMaPhong.Size = new System.Drawing.Size(139, 29);
+            this.rdoMaPhong.Size = new System.Drawing.Size(88, 20);
             this.rdoMaPhong.TabIndex = 65;
             this.rdoMaPhong.TabStop = true;
             this.rdoMaPhong.Text = "Mã phòng";
@@ -85,10 +83,9 @@
             this.txtdanhsachDichVu.AutoSize = true;
             this.txtdanhsachDichVu.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.txtdanhsachDichVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.txtdanhsachDichVu.Location = new System.Drawing.Point(572, 98);
-            this.txtdanhsachDichVu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.txtdanhsachDichVu.Location = new System.Drawing.Point(381, 63);
             this.txtdanhsachDichVu.Name = "txtdanhsachDichVu";
-            this.txtdanhsachDichVu.Size = new System.Drawing.Size(668, 63);
+            this.txtdanhsachDichVu.Size = new System.Drawing.Size(423, 39);
             this.txtdanhsachDichVu.TabIndex = 57;
             this.txtdanhsachDichVu.Text = "Danh sách phòng cho thuê";
             // 
@@ -96,29 +93,26 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label1.Location = new System.Drawing.Point(1158, 842);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(772, 539);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(195, 37);
+            this.label1.Size = new System.Drawing.Size(122, 25);
             this.label1.TabIndex = 56;
             this.label1.Text = "Mã sinh viên";
             // 
             // txtThoigianthue
             // 
             this.txtThoigianthue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtThoigianthue.Location = new System.Drawing.Point(1434, 666);
-            this.txtThoigianthue.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtThoigianthue.Location = new System.Drawing.Point(956, 426);
             this.txtThoigianthue.Name = "txtThoigianthue";
-            this.txtThoigianthue.Size = new System.Drawing.Size(266, 44);
+            this.txtThoigianthue.Size = new System.Drawing.Size(179, 30);
             this.txtThoigianthue.TabIndex = 53;
             // 
             // btnChinh
             // 
             this.btnChinh.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.btnChinh.Location = new System.Drawing.Point(1233, 1336);
-            this.btnChinh.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnChinh.Location = new System.Drawing.Point(822, 855);
             this.btnChinh.Name = "btnChinh";
-            this.btnChinh.Size = new System.Drawing.Size(112, 36);
+            this.btnChinh.Size = new System.Drawing.Size(75, 23);
             this.btnChinh.TabIndex = 47;
             this.btnChinh.Text = "Chỉnh sửa";
             this.btnChinh.UseVisualStyleBackColor = false;
@@ -126,10 +120,9 @@
             // 
             // btnTaoMoi
             // 
-            this.btnTaoMoi.Location = new System.Drawing.Point(1094, 1336);
-            this.btnTaoMoi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnTaoMoi.Location = new System.Drawing.Point(729, 855);
             this.btnTaoMoi.Name = "btnTaoMoi";
-            this.btnTaoMoi.Size = new System.Drawing.Size(112, 36);
+            this.btnTaoMoi.Size = new System.Drawing.Size(75, 23);
             this.btnTaoMoi.TabIndex = 48;
             this.btnTaoMoi.Text = "Tạo mới";
             this.btnTaoMoi.UseVisualStyleBackColor = true;
@@ -137,11 +130,10 @@
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(1635, 1336);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnThoat.Location = new System.Drawing.Point(1090, 855);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnThoat.Size = new System.Drawing.Size(112, 36);
+            this.btnThoat.Size = new System.Drawing.Size(75, 23);
             this.btnThoat.TabIndex = 49;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
@@ -149,11 +141,10 @@
             // 
             // btnTroLai
             // 
-            this.btnTroLai.Location = new System.Drawing.Point(1514, 1336);
-            this.btnTroLai.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnTroLai.Location = new System.Drawing.Point(1009, 855);
             this.btnTroLai.Name = "btnTroLai";
             this.btnTroLai.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnTroLai.Size = new System.Drawing.Size(112, 36);
+            this.btnTroLai.Size = new System.Drawing.Size(75, 23);
             this.btnTroLai.TabIndex = 50;
             this.btnTroLai.Text = "Trở lại";
             this.btnTroLai.UseVisualStyleBackColor = true;
@@ -162,11 +153,10 @@
             // btnXoa
             // 
             this.btnXoa.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnXoa.Location = new System.Drawing.Point(1378, 1336);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnXoa.Location = new System.Drawing.Point(919, 855);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnXoa.Size = new System.Drawing.Size(112, 36);
+            this.btnXoa.Size = new System.Drawing.Size(75, 23);
             this.btnXoa.TabIndex = 51;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
@@ -174,26 +164,23 @@
             // 
             // txtMaPhong
             // 
-            this.txtMaPhong.Location = new System.Drawing.Point(300, 236);
-            this.txtMaPhong.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtMaPhong.Location = new System.Drawing.Point(200, 151);
             this.txtMaPhong.Name = "txtMaPhong";
-            this.txtMaPhong.Size = new System.Drawing.Size(246, 31);
+            this.txtMaPhong.Size = new System.Drawing.Size(165, 22);
             this.txtMaPhong.TabIndex = 46;
             // 
             // txtSoPhong
             // 
-            this.txtSoPhong.Location = new System.Drawing.Point(300, 328);
-            this.txtSoPhong.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtSoPhong.Location = new System.Drawing.Point(200, 210);
             this.txtSoPhong.Name = "txtSoPhong";
-            this.txtSoPhong.Size = new System.Drawing.Size(474, 31);
+            this.txtSoPhong.Size = new System.Drawing.Size(317, 22);
             this.txtSoPhong.TabIndex = 45;
             // 
             // btnTimKiem
             // 
-            this.btnTimKiem.Location = new System.Drawing.Point(594, 231);
-            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnTimKiem.Location = new System.Drawing.Point(396, 148);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(180, 36);
+            this.btnTimKiem.Size = new System.Drawing.Size(120, 23);
             this.btnTimKiem.TabIndex = 44;
             this.btnTimKiem.Text = "Tìm Kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
@@ -203,12 +190,11 @@
             // gdvPhongchothue
             // 
             this.gdvPhongchothue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gdvPhongchothue.Location = new System.Drawing.Point(75, 442);
-            this.gdvPhongchothue.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gdvPhongchothue.Location = new System.Drawing.Point(50, 283);
             this.gdvPhongchothue.Name = "gdvPhongchothue";
             this.gdvPhongchothue.RowHeadersWidth = 51;
             this.gdvPhongchothue.RowTemplate.Height = 24;
-            this.gdvPhongchothue.Size = new System.Drawing.Size(986, 930);
+            this.gdvPhongchothue.Size = new System.Drawing.Size(657, 595);
             this.gdvPhongchothue.TabIndex = 43;
             this.gdvPhongchothue.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gdvPhongchothue_CellContentClick);
             // 
@@ -216,10 +202,9 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label7.Location = new System.Drawing.Point(1158, 936);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(772, 599);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(135, 37);
+            this.label7.Size = new System.Drawing.Size(82, 25);
             this.label7.TabIndex = 59;
             this.label7.Text = "Giới tính";
             // 
@@ -227,10 +212,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label2.Location = new System.Drawing.Point(1158, 581);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(772, 372);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 37);
+            this.label2.Size = new System.Drawing.Size(97, 25);
             this.label2.TabIndex = 59;
             this.label2.Text = "Số phòng";
             // 
@@ -238,10 +222,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label3.Location = new System.Drawing.Point(1158, 666);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(772, 426);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(259, 37);
+            this.label3.Size = new System.Drawing.Size(159, 25);
             this.label3.TabIndex = 56;
             this.label3.Text = "Khoảng thời gian";
             // 
@@ -249,10 +232,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label4.Location = new System.Drawing.Point(1158, 750);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(772, 480);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(194, 37);
+            this.label4.Size = new System.Drawing.Size(120, 25);
             this.label4.TabIndex = 56;
             this.label4.Text = "Tính từ ngày";
             // 
@@ -260,69 +242,69 @@
             // 
             this.maphong.AutoSize = true;
             this.maphong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.maphong.Location = new System.Drawing.Point(1158, 494);
-            this.maphong.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.maphong.Location = new System.Drawing.Point(772, 316);
             this.maphong.Name = "maphong";
-            this.maphong.Size = new System.Drawing.Size(160, 37);
+            this.maphong.Size = new System.Drawing.Size(100, 25);
             this.maphong.TabIndex = 59;
             this.maphong.Text = "Mã phòng";
             // 
             // datetimeChoThue
             // 
-            this.datetimeChoThue.Location = new System.Drawing.Point(1434, 755);
-            this.datetimeChoThue.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.datetimeChoThue.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datetimeChoThue.Location = new System.Drawing.Point(956, 483);
             this.datetimeChoThue.Name = "datetimeChoThue";
-            this.datetimeChoThue.Size = new System.Drawing.Size(266, 31);
+            this.datetimeChoThue.Size = new System.Drawing.Size(179, 22);
             this.datetimeChoThue.TabIndex = 68;
             // 
             // txtMaSV
             // 
             this.txtMaSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtMaSV.Location = new System.Drawing.Point(1434, 842);
-            this.txtMaSV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtMaSV.Location = new System.Drawing.Point(956, 539);
             this.txtMaSV.Name = "txtMaSV";
-            this.txtMaSV.Size = new System.Drawing.Size(266, 44);
+            this.txtMaSV.Size = new System.Drawing.Size(179, 30);
             this.txtMaSV.TabIndex = 53;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label5.Location = new System.Drawing.Point(1158, 666);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(772, 426);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(0, 37);
+            this.label5.Size = new System.Drawing.Size(0, 25);
             this.label5.TabIndex = 59;
             // 
             // cboMaPhong
             // 
             this.cboMaPhong.FormattingEnabled = true;
-            this.cboMaPhong.Location = new System.Drawing.Point(1434, 500);
+            this.cboMaPhong.Location = new System.Drawing.Point(956, 320);
+            this.cboMaPhong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cboMaPhong.Name = "cboMaPhong";
-            this.cboMaPhong.Size = new System.Drawing.Size(265, 33);
+            this.cboMaPhong.Size = new System.Drawing.Size(178, 24);
             this.cboMaPhong.TabIndex = 69;
             // 
             // cboSoPhong
             // 
             this.cboSoPhong.FormattingEnabled = true;
-            this.cboSoPhong.Location = new System.Drawing.Point(1434, 585);
+            this.cboSoPhong.Location = new System.Drawing.Point(956, 374);
+            this.cboSoPhong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cboSoPhong.Name = "cboSoPhong";
-            this.cboSoPhong.Size = new System.Drawing.Size(264, 33);
+            this.cboSoPhong.Size = new System.Drawing.Size(177, 24);
             this.cboSoPhong.TabIndex = 70;
             // 
             // cboGioiTinh
             // 
             this.cboGioiTinh.FormattingEnabled = true;
-            this.cboGioiTinh.Location = new System.Drawing.Point(1433, 936);
+            this.cboGioiTinh.Location = new System.Drawing.Point(955, 599);
+            this.cboGioiTinh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cboGioiTinh.Name = "cboGioiTinh";
-            this.cboGioiTinh.Size = new System.Drawing.Size(265, 33);
+            this.cboGioiTinh.Size = new System.Drawing.Size(178, 24);
             this.cboGioiTinh.TabIndex = 71;
             // 
             // FrmThueTraPhong
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1822, 1475);
+            this.ClientSize = new System.Drawing.Size(1215, 675);
             this.Controls.Add(this.cboGioiTinh);
             this.Controls.Add(this.cboSoPhong);
             this.Controls.Add(this.cboMaPhong);
@@ -348,7 +330,6 @@
             this.Controls.Add(this.txtSoPhong);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.gdvPhongchothue);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmThueTraPhong";
             this.Text = "FrmThueTraPhong";
             this.Load += new System.EventHandler(this.FrmThueTraPhong_Load);
